@@ -44,9 +44,10 @@ namespace QuoteGenUS
             quoteText = QuoteTextFileSplit[quoteNumber];
 
             TitleHeader.InnerText = quoteText;
+        }
 
-
-
+        protected void SaveButton_Click(object sender, EventArgs e)
+        {
 
         }
     }

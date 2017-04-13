@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head runat="server">
+<head runat="server" >
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Quote Gen US</title>
@@ -39,7 +39,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-fixed-top" >
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -54,6 +54,10 @@
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/LogIn">Log in</a></li>
+                        <li><a runat="server" href="~/Register">Register</a></li>
+
+
                     </ul>
                 </div>
             </div>
@@ -62,7 +66,8 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p >&copy; <%: DateTime.Now.Year %> - Quote Gen US</p>
+                
+                <p style="text-align:center">&copy; <%: DateTime.Now.Year %> - Quote Gen US</p>
             </footer>
 
 
