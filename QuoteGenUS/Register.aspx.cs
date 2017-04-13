@@ -13,5 +13,11 @@ namespace QuoteGenUS
         {
 
         }
+
+
+        protected void RegisterButton_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
