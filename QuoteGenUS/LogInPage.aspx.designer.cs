@@ -10,7 +10,7 @@
 namespace QuoteGenUS {
     
     
-    public partial class Register {
+    public partial class LogInPage {
         
         /// <summary>
         /// UsernameLabel control.
@@ -67,48 +67,12 @@ namespace QuoteGenUS {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordRequiredValidator;
         
         /// <summary>
-        /// ConfirmPasswordLabel control.
+        /// LoginButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ConfirmPasswordLabel;
-        
-        /// <summary>
-        /// ConfirmPasswordTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ConfirmPasswordTextBox;
-        
-        /// <summary>
-        /// ConfirmPasswordRequiredValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ConfirmPasswordRequiredValidator;
-        
-        /// <summary>
-        /// RegisterButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RegisterButton;
-        
-        /// <summary>
-        /// CompareValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
+        protected global::System.Web.UI.WebControls.Button LoginButton;
     }
 }

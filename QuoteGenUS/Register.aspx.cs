@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
+using System.Web.Hosting;
+
 
 namespace QuoteGenUS
 {
@@ -17,7 +20,13 @@ namespace QuoteGenUS
 
         protected void RegisterButton_Click(object sender, EventArgs e)
         {
-            
+            if (ConfirmPasswordTextBox.Text == PasswordTextBox.Text)
+            {
+                string username = UsernameTextBox.Text;
+                string password = PasswordTextBox.Text;
+                Login.SaveLogin(username, password);
+
+            }
         }
     }
 }

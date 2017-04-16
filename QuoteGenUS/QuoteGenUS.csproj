@@ -128,7 +128,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="App_Data\AccountUsernames.txt" />
-    <Content Include="App_Data\Passwords.txt" />
+    <Content Include="App_Data\AccountPasswords.txt" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -145,8 +145,9 @@
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Resources\QuoteTextFile.txt" />
-    <Content Include="LogInspx.aspx" />
+    <Content Include="LogInPage.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="SavedQuotes.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -191,6 +192,7 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -208,12 +210,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="LogInspx.aspx.cs">
-      <DependentUpon>LogInspx.aspx</DependentUpon>
+    <Compile Include="LogInPage.aspx.cs">
+      <DependentUpon>LogInPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LogInspx.aspx.designer.cs">
-      <DependentUpon>LogInspx.aspx</DependentUpon>
+    <Compile Include="LogInPage.aspx.designer.cs">
+      <DependentUpon>LogInPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -227,6 +229,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SavedQuotes.aspx.cs">
+      <DependentUpon>SavedQuotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SavedQuotes.aspx.designer.cs">
+      <DependentUpon>SavedQuotes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -250,7 +259,9 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\Users\SavedQuotes\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />

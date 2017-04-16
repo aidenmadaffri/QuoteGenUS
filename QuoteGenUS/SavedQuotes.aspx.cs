@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace QuoteGenUS
 {
-    public partial class LogInspx : System.Web.UI.Page
+    public partial class SavedQuotes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
