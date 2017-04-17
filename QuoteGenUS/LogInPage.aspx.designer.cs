@@ -40,6 +40,15 @@ namespace QuoteGenUS {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator UsernameRequiredValidator;
         
         /// <summary>
+        /// UsernameInvalidLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label UsernameInvalidLabel;
+        
+        /// <summary>
         /// PasswordLabel control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace QuoteGenUS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordRequiredValidator;
+        
+        /// <summary>
+        /// PasswordInvalidLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PasswordInvalidLabel;
         
         /// <summary>
         /// LoginButton control.
