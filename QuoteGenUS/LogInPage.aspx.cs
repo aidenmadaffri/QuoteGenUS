@@ -57,7 +57,7 @@ namespace QuoteGenUS
             
             if ((validUsername == true) && (validPassword == true))
             {
-                Response.Redirect("SavedQuotes.aspx?usr=" + username);
+                Response.Redirect(String.Format("SavedQuotes.aspx?usr={0}&quote=0", username));
             }
             else
             {

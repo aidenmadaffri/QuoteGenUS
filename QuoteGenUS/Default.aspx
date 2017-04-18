@@ -6,7 +6,8 @@
         
         <h1 id="TitleHeader" runat="server" style="text-align:center">Quote Gen US</h1>
         <p class="lead" style="text-align:center">
-            <asp:Button ID="SaveButton" runat="server" BackColor="Blue" Font-Bold="True" ForeColor="White" Text="Save this Quote" Width="298px" OnClick="SaveButton_Click" CausesValidation="False" />
+            <asp:Button ID="SaveButton" runat="server" BackColor="Blue" Font-Bold="True" ForeColor="White" Text="Save this Quote" Width="198px" OnClick="SaveButton_Click" CausesValidation="False" />
+            <asp:TextBox ID="usernameTextBox" runat="server">Enter Username</asp:TextBox>
         </p>
         <p class="lead" style="text-align:center">
             <asp:Button ID="GenerateQuoteButton" runat="server" BackColor="Blue" Font-Bold="True" ForeColor="White" Text="Generate a Quote" Width="298px" OnClick="GenerateQuoteButton_Click" CausesValidation="False" />
