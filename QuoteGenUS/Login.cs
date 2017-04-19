@@ -24,6 +24,7 @@ namespace QuoteGenUS
             using (StreamWriter sw = new StreamWriter(HostingEnvironment.MapPath(@"~/App_Data/Users/SavedQuotes/" + username + ".txt"), true))
             {
                 sw.WriteLine(username + "'s Saved Quotes");
+                sw.WriteLine("");
             }
           
 

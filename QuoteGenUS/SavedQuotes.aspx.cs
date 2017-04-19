@@ -38,7 +38,20 @@ namespace QuoteGenUS
                     sr.ReadLine();
                     for (int i = 0; i < quoteNumber; i++)
                     {
-                        quote = int.Parse(sr.ReadLine());
+                        string line = sr.ReadLine();
+                        if (line != null)
+                        {
+                            quote = int.Parse(line);
+                        }
+                        else
+                        {
+                            using (StreamReader firstQuoteReader = new StreamReader(HostingEnvironment.MapPath(@"~/App_Data/Users/SavedQuotes/" + username + ".txt")))
+                            {
+                                firstQuoteReader.ReadLine();
+                                quote = int.Parse(firstQuoteReader.ReadLine());
+                                quoteNumber = 0;
+                            }
+                        }
                         
                     }
                 }

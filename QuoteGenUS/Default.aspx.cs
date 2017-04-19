@@ -19,6 +19,14 @@ namespace QuoteGenUS
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (ViewState["quoteNumber"] != null)
+            {
+                quoteNumber = (int)ViewState["quoteNumber"];
+            }
+            if (ViewState["usedQuotes"] != null)
+            {
+                usedQuotes = (List<int>)ViewState["usedQuotes"];
+            }
             QuoteTextFileBase = Properties.Resources.QuoteTextFile;
             QuoteTextFileSplit = QuoteTextFileBase.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
@@ -43,9 +51,13 @@ namespace QuoteGenUS
                     quoteNumber = RNG.Next(1, quoteCount); // For each used quote, make sure it is not a quote that will be outputed
                 }
             }
+
+            ViewState["quoteNumber"] = quoteNumber;
+            ViewState["usedQuotes"] = usedQuotes;
             quoteText = QuoteTextFileSplit[quoteNumber];
 
             TitleHeader.InnerText = quoteText;
+            
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
