@@ -12,29 +12,59 @@ namespace QuoteGenUS
     public partial class SavedQuotes : System.Web.UI.Page
     {
         string username = "";
+        int quoteNumber;
+        int quote;
+        string QuoteTextFileBase;
+        List<string> QuoteTextFileSplit;
         protected void Page_Load(object sender, EventArgs e)
         {
             username = Request.QueryString["usr"];
-            int lineNumber = 0;
+            quoteNumber = int.Parse(Request.QueryString["quote"]);
+            int lineNumber = -1;
             using (StreamReader sr = new StreamReader(HostingEnvironment.MapPath(@"~/App_Data/Users/SavedQuotes/" + username + ".txt")))
             {
                 while (sr.ReadLine() != null) { lineNumber++; }
             }
             savedQuotesNumberText.InnerText = String.Format("You have {0} saved quotes!", lineNumber);
-            QuoteText.InnerText = "Press the button below to see your quotes!";
+            if (quoteNumber == 0)
+            {
+                QuoteText.InnerText = "Press the button below to see your quotes!";
+            }
+            else
+            {
+                using (StreamReader sr = new StreamReader(HostingEnvironment.MapPath(@"~/App_Data/Users/SavedQuotes/" + username + ".txt")))
+                {
+                    //To skip (Blank)'s Saved Quotes
+                    sr.ReadLine();
+                    for (int i = 0; i < quoteNumber; i++)
+                    {
+                        string line = sr.ReadLine();
+                        if (line != null)
+                        {
+                            quote = int.Parse(line);
+                        }
+                        else
+                        {
+                            using (StreamReader firstQuoteReader = new StreamReader(HostingEnvironment.MapPath(@"~/App_Data/Users/SavedQuotes/" + username + ".txt")))
+                            {
+                                firstQuoteReader.ReadLine();
+                                quote = int.Parse(firstQuoteReader.ReadLine());
+                                quoteNumber = 0;
+                            }
+                        }
+                        
+                    }
+                }
+                QuoteTextFileBase = Properties.Resources.QuoteTextFile;
+                QuoteTextFileSplit = QuoteTextFileBase.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                QuoteText.InnerText = QuoteTextFileSplit[quote];
+            }
         }
 
         protected void nextQuoteButton_Click(object sender, EventArgs e)
         {
-            using (StreamReader sr = new StreamReader(HostingEnvironment.MapPath(@"~/App_Data/Users/SavedQuotes/" + username + ".txt")))
-            {
-                //To skip "(Blank)'s Saved Quotes"
-                sr.ReadLine();
-                while(sr.EndOfStream == false)
-                {
-
-                }
-            }
+            quoteNumber++;
+            Response.Redirect(String.Format("SavedQuotes.aspx?usr={0}&quote={1}", username, quoteNumber));
         }
     }
 }

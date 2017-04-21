@@ -25,7 +25,7 @@ namespace QuoteGenUS
                 string username = UsernameTextBox.Text;
                 string password = PasswordTextBox.Text;
                 Login.SaveLogin(username, password);
-
+                Response.Redirect("LogInPage.aspx");
             }
         }
     }
